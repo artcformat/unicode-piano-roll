@@ -33,6 +33,40 @@ You will also, optionally, be able to include a visualization of each note's del
 
 (predicted based on the score plus the context of the performance up to that point)
 
+## Performing a score
+
+### ...with evenly-distributed note intensity in the chords:
+
+Using any of:
+
+- `a MIDI keyboard` + `the command-line tool` (using CoreMIDI/etc)
+- `a MIDI keyboard` + `the VSCode extension` (using CoreMIDI/etc)
+- `a MIDI keyboard` + `a browser supporting the Web MIDI API` + `a webshit version of the command-line tool` (via compilation to WASM)
+
+...you can press any key on the left half of your MIDI keyboard to play the next chord that's tee'd up in the score for the left hand.
+
+This means that as a novice, without having to worry about pressing the correct keys on the keyboard you can:
+
+- focus on learning how to play the rhythm well
+
+- enjoy performing the piece, exploring what various timing and intensity subtleties sound like
+
+When you trigger the playing of a chord:
+
+1. Virtual MIDI events will immediately be sent to your system, so the notes can be played as audio from a virtual instrument in GarageBand, MainStage, or any other such app
+
+2. If you wish, the preformance data will be logged. It can be logged to a separate performance file in the background, or you can have the program update the UPR text on the screen as you perform your way through the score, adding performance annotations in the right margin
+
+### ...with a non-uniform distribution of note intensity in the chords:
+
+Instead of having the entire left half of the keyboard correspond to "play the next chord for the left hand", this is a little more complicated.
+
+You can designate a specific list of MIDI keys on the left half of the keyboard (e.g. F♯<sub>1</sub> G♯<sub>1</sub> A♯<sub>1</sub> C<sub>2</sub>) to correspond, respectively, to the first, second, third, and fourth notes of whatever chord is being played.
+
+As soon as you press each key, the program will play the corresponding note of the chord.
+
+When you have played each note of the chord, the program is ready to advance to the next chord for the left hand of the score.
+
 ## Recommended filenames
 
 |                                         |                                                                                          |
